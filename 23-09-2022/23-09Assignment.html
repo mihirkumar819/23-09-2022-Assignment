@@ -17,15 +17,12 @@
         }
     </style>
     <script>
-        
-
-
 
         var xhr=new XMLHttpRequest();
         xhr.addEventListener("readystatechange",xrhHandler);
         function xrhHandler(evt){
             if(evt.target.readyState===4){  
-                var can=document.getElementById("can");
+                var can=document.getElementById("mycan");
                 var ctx= can.getContext("2d");
 
                 ctx.beginPath();
@@ -47,10 +44,10 @@
                 ctx.fillText("Cases:",8,450);
                 ctx.closePath();
 
-                ctx.fillText("100-",49,707);
-                ctx.fillText("200-",49,607);
-                ctx.fillText("300-",49,507);
-                ctx.fillText("400-",49,407);
+                ctx.fillText("100-",50,707);
+                ctx.fillText("200-",50,607);
+                ctx.fillText("300-",50,507);
+                ctx.fillText("400-",50,407);
 
 
 
@@ -166,7 +163,7 @@
 </head>
 <body>
   
-    <canvas id="can" width="900" height="900"></canvas>
+    <canvas id="mycan" width="900" height="900"></canvas>
     <br>
     <button>Get Graph</button>
 </body>
