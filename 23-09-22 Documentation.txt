@@ -1,0 +1,5 @@
+Problem Statement:
+ 	use the following data in your application through XMLHttpRequest
+        and plot a Barnhart on a canvas depicting the cases handled by each of these heroes.
+Outcome: While doing Assignment I learnt lots of thing about Canvas , DOM and about graph.
+  	 In this Exercise I attached the JSON file with Html and fetching the all data. 
