@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <script type="text/javascript" src="htps://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.jst"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js">
+   </script>
+   <title>Chart</title>
+</head>
+<body>
+   <h1 style="color: green;">
+      Cases Handled By Agents
+   </h1>
+   <div style="width: 800, height: 600">
+      <canvas id="bar-chart">
+      </canvas>
+   </div>
+<script>
+   getData();
+   async function getData() {
+      const response = await fetch('data1.json');
+      const root = await response.json();
+      console.log(root);
+      length = root.root.length;
+      console.log(length);
+      labels = [];
+      values = [];
+      for (i = 0; i < length; i++) {
+         labels.push(root.root[i].agentName);
+         values.push(root.root[i].casesHandled);
+      }
+      new Chart(document.getElementById("bar-chart"), {
+         type: 'bar',
+         data: {
+            labels: labels,
+            datasets: [
+               {
+                  label: "agentName",
+                  backgroundColor: ["#770909",
+                     "#911818",
+                     "#a52929",
+                     "#c13f3f",
+                     "#ed6868",
+                     "#f28787"
+                     
+                    ],
+                  data: values
+               }
+            ]
+         },
+         options: {
+            legend: { display: false },
+            title: {
+               display: true,
+               text: 'Bar Chart'
+            }
+         }
+      });
+   }
+</script>
+</body>
+</html>
+
